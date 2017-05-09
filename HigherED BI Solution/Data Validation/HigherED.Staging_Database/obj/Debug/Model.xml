@@ -1,0 +1,2132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="HigherED.Staging_Database.dll" />
+			<Metadata Name="FileName" Value="C:\USERS\PLEBLANC.SQLLUNCH\DOCUMENTS\GITHUB\TEMPLATES\HIGHERED BI SOLUTION\DATA VALIDATION\HIGHERED.STAGING_DATABASE\OBJ\DEBUG\HIGHERED.STAGING_DATABASE.DLL" />
+			<Metadata Name="AssemblyName" Value="HigherED.Staging_Database" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\templates\HigherED BI Solution\Data Validation\HigherED.Staging_Database\obj\Debug\HigherED.Staging_Database.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[AcademicLevel]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT DISTINCT 
+	CAST(LEFT([Academic_Level], 2) AS varchar(2)) AcademicLevelAK,
+	CAST([Academic_Level] AS varchar(25)) AcademicLevel
+FROM dbo.EnrollmentSummary]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[AcademicLevel].[AcademicLevelAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[AcademicLevel].[AcademicLevel]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[Academic_Level]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="198" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.AcademicLevel&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[AcademicProgram]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT DISTINCT
+	CAST([ACAD_PROG] AS varchar(10)) AcademicProgramAK, 
+	CAST([ACAD_PROG_DESCR] AS varchar(50)) AcademicProgram,
+	CAST([ACAD_PLAN] AS varchar(10)) AcademicPlanAK, 
+	CAST([ACAD_PLAN_DESCR] AS varchar(50)) AcademicPlan
+FROM dbo.StudentProfile
+UNION 
+SELECT DISTINCT
+	CAST([Current_Program] AS varchar(10)) AcademicProgramAK,  
+	CAST([Current_Program_DESCR] AS varchar(50)) AcademicProgram,
+	CAST([Current_PLAN] AS varchar(10)) AcademicPlanAK, 
+	CAST([Current_PLAN_DESCR] AS varchar(50)) AcademicPlan
+FROM dbo.StudentProfile]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[AcademicProgram].[AcademicProgramAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[AcademicProgram].[AcademicProgram]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[AcademicProgram].[AcademicPlanAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[AcademicProgram].[AcademicPlan]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[StudentProfile]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ACAD_PROG]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ACAD_PROG_DESCR]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ACAD_PLAN]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ACAD_PLAN_DESCR]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[CURRENT_PROGRAM]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[CURRENT_PROGRAM_DESCR]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[CURRENT_PLAN]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[CURRENT_PLAN_DESCR]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="584" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.AcademicProgram&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[Admission]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	CAST(CRMID AS bigint) StudentAK,
+	--CAST([ADMIT_TERM] AS int) TermAK,
+	CAST(CONVERT( varchar(10),CAST(t.StartDate AS date), 112) AS int) AdmitDateAK,
+	CAST([ADMIT_TYPE] AS varchar(5)) AdmitTypeAK,
+	LEFT([APPL_SOURCE], 1) ApplicationSourceAK,
+	CAST([ACAD_PROG] AS varchar(10)) AcademicProgramAK,
+	CAST([ACAD_PLAN] AS varchar(10)) AcademicPlanAK,
+	CAST([CURRENT_PROGRAM] AS varchar(10)) CurrentAcademicProgramAK,
+	CAST([CURRENT_PLAN] AS varchar(10)) CurrentAcademicPlanAK
+FROM dbo.StudentProfile sp
+INNER JOIN dbo.Term t
+	ON sp.ADMIT_TERM = t.TermAK]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Admission].[StudentAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Admission].[AdmitDateAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Admission].[AdmitTypeAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Admission].[ApplicationSourceAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Admission].[AcademicProgramAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Admission].[AcademicPlanAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Admission].[CurrentAcademicProgramAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Admission].[CurrentAcademicPlanAK]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[StudentProfile]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Term]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ADMIT_TERM]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Term].[TermAK]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bigint]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[CRMID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Term].[StartDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ADMIT_TYPE]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[APPL_SOURCE]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ACAD_PROG]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ACAD_PLAN]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[CURRENT_PROGRAM]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[CURRENT_PLAN]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="599" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Admission&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[AdmitType]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT DISTINCT
+	CAST(Admit_Type AS varchar(5)) AdmitTypeAK,
+	CAST(Admit_Type_Descr AS varchar(75)) AdmitType
+FROM dbo.StudentProfile]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[AdmitType].[AdmitTypeAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[AdmitType].[AdmitType]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[StudentProfile]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ADMIT_TYPE]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ADMIT_TYPE_DESCR]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="167" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.AdmitType&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[ApplicationSource]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT DISTINCT
+	CAST(LEFT(Appl_Source, 1) AS varchar(3)) ApplicationSourceAK,
+	CAST(Appl_Source AS varchar(25)) ApplicationSource
+FROM dbo.StudentProfile]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[ApplicationSource].[ApplicationSourceAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[ApplicationSource].[ApplicationSource]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[StudentProfile]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[APPL_SOURCE]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="196" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.ApplicationSource&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[Class]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+WITH results
+AS
+(
+	SELECT DISTINCT
+		ROW_NUMBER() OVER(ORDER BY [Subject], [Catalog], [Class_Section], [Instruction_Mode]) ID,
+		CAST([Subject] AS varchar(10)) SubjectAK,
+		CAST([Catalog] AS varchar(10)) CatalogAK,
+		CAST([Class_Section] AS varchar(5)) ClassSectionAK,
+				CAST(Instruction_Mode AS varchar(35)) InstructionModeAK,
+		CAST(Title AS varchar(50)) Title,
+		CAST([Course_Credit_Hour] AS int) CourseCreditHours
+	FROM [dbo].[EnrollmentDetails]
+)
+SELECT *
+FROM results r
+WHERE ID IN
+(
+	SELECT MAX(ID)
+	FROM results
+	GROUP BY SubjectAK, ClassSectionAK, CatalogAK, InstructionModeAK
+)]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Class].[ID]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Class].[SubjectAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Class].[CatalogAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Class].[ClassSectionAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Class].[InstructionModeAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Class].[Title]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Class].[CourseCreditHours]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[Class].[CTE1].[results]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Class].[CTE1].[results].[ID]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Class].[CTE1].[results].[SubjectAK]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Class].[CTE1].[results].[CatalogAK]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Class].[CTE1].[results].[ClassSectionAK]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Class].[CTE1].[results].[InstructionModeAK]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Class].[CTE1].[results].[Title]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Class].[CTE1].[results].[CourseCreditHours]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Subject]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Catalog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Class_Section]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Instruction_Mode]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Title]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Course_Credit_Hour]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="636" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Class&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[Details]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	CAST([CRMID] AS int) StudentAK,
+	--CAST([Term] AS int) TermAK,
+	CAST(CONVERT( varchar(10),CAST(t.StartDate AS date), 112) AS int) EnrollmentTermDateAK,
+	CAST([Subject] AS varchar(10)) SubjectAK,
+	CAST([Class_Section] AS varchar(5)) ClassSectionAK,
+	CAST([Catalog] AS varchar(10)) CatalogAK,
+	CONVERT(varchar(10), TRY_CAST([Enrolled_Date] AS date), 112) EnrolledDate,
+	CONVERT(varchar(10), TRY_CAST([Dropped_Date] AS date), 112) DropDate,
+	CAST([MidTerm_Grade] AS varchar(5)) MidTermGrade,
+	CAST([EndofSem_Grade] AS varchar(5)) EndSemesterGrade,
+	IIF([Enrolled_Dropped] = 'D', 1, 0) Dropped,
+	IIF([Enrolled_Dropped] = 'E', 1, 0) Enrolled
+FROM dbo.EnrollmentDetails ed
+INNER JOIN dbo.Term t
+	ON ed.Term = t.TermAK]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[StudentAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[EnrollmentTermDateAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[SubjectAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[ClassSectionAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[CatalogAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[EnrolledDate]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[DropDate]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[MidTermGrade]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[EndSemesterGrade]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[Dropped]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Details].[Enrolled]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Term]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Term]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Term].[TermAK]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[CRMID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Term].[StartDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Subject]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Class_Section]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Catalog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Enrolled_Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Dropped_Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[MidTerm_Grade]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[EndofSem_Grade]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails].[Enrolled_Dropped]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="764" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Details&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[EnrollmentDetails]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[EnrollmentDetailsID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[Subject]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[Catalog]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[Title]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[Term]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[CRMID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[Class_Section]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[Course_Credit_Hour]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[Instruction_Mode]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[MidTerm_Grade]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[EndofSem_Grade]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[Enrolled_Dropped]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[Enrolled_Date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentDetails].[Dropped_Date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[EnrollmentSummary]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[EnrollmentSummaryID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Term]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[CRMID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Residential_Commuter]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[InState_OutState]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Term_Credit_Attempted]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Term_Credits_Earned]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Term_GPA]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Transfer_Credit]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Cum_Credits_Attempted]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Cum_Credits_Earned]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Cum_GPA]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Academic_Level]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[EnrollmentSummary].[Academic_Standing]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_EnrollmentDetails_EnrollmentDetailID]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[EnrollmentDetails].[EnrollmentDetailsID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[EnrollmentDetails]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="3" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_EnrollmentSummary_EnrollmentSummaryID]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[EnrollmentSummary].[EnrollmentSummaryID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="4" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_StudentProfile_StudentProfileID]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[StudentProfile].[StudentProfileID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[StudentProfile]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_Term_TermPK]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Term].[TermID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Term]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[ResidencyStatus]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT DISTINCT
+	CAST(LEFT([InState_OutState], 1) AS char(1)) ResidencyStatusAK,
+	CAST(IIF([InState_OutState] = 'NULL', 'Not Available', [InState_OutState]) AS varchar(15)) ResidencyStatus
+FROM [dbo].[EnrollmentSummary]]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[ResidencyStatus].[ResidencyStatusAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[ResidencyStatus].[ResidencyStatus]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[InState_OutState]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="259" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.ResidencyStatus&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[Student]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+WITH results
+AS
+(
+	SELECT DISTINCT
+		ROW_NUMBER() OVER(ORDER BY CRMID) ID,
+		CAST(CRMID AS bigint) StudentAK,
+		CAST(Gender AS varchar(20)) Gender,
+		CAST(AGE_BY_YEARS AS int) Age,
+		CAST(CITY AS varchar(75)) City,
+		CAST([STATE] AS varchar(3)) StateAbbrev,
+		CAST(POSTAL AS varchar(15)) PostalCode,
+		CAST(ADMIT_TERM AS int) AdmitTerm,
+		First_Name FirstName,
+		Last_Name LastName,
+		MIDDLE_NAME MiddleName, 
+		ADDRESS1 Address1,
+		ADDRESS2 Address2
+	FROM dbo.StudentProfile
+)
+SELECT *
+FROM results
+WHERE
+ID IN
+(
+	SELECT MAX(ID) 
+	FROM results GROUP BY StudentAK
+)]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[ID]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[StudentAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[Gender]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[Age]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[City]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[StateAbbrev]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[PostalCode]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[AdmitTerm]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[FirstName]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[StudentProfile].[FIRST_NAME]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[LastName]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[StudentProfile].[LAST_NAME]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[MiddleName]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[StudentProfile].[MIDDLE_NAME]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[Address1]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[StudentProfile].[ADDRESS1]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Student].[Address2]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[StudentProfile].[ADDRESS2]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[Student].[CTE1].[results]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[ID]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[StudentAK]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[Gender]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[Age]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[City]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[StateAbbrev]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[PostalCode]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[AdmitTerm]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[FirstName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[StudentProfile].[FIRST_NAME]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[LastName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[StudentProfile].[LAST_NAME]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[MiddleName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[StudentProfile].[MIDDLE_NAME]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[Address1]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[StudentProfile].[ADDRESS1]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Student].[CTE1].[results].[Address2]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[StudentProfile].[ADDRESS2]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[StudentProfile]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[CRMID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bigint]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[GENDER]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[AGE_BY_YEARS]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[CITY]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[STATE]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[POSTAL]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ADMIT_TERM]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[FIRST_NAME]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[LAST_NAME]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[MIDDLE_NAME]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ADDRESS1]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[StudentProfile].[ADDRESS2]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="620" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Student&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[StudentProfile]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[StudentProfileID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[CRMID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[LAST_NAME]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[FIRST_NAME]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[MIDDLE_NAME]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ADMIT_TERM]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ADMIT_DESCR]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ACAD_CAREER]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ADMIT_TYPE]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ADMIT_TYPE_DESCR]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[APPL_SOURCE]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ACAD_PROG]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ACAD_PROG_DESCR]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ACAD_PLAN]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ACAD_PLAN_DESCR]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[GENDER]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[AGE_BY_YEARS]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ADDRESS1]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[ADDRESS2]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[CITY]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[STATE]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[POSTAL]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[CURRENT_PROGRAM]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[CURRENT_PROGRAM_DESCR]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[CURRENT_PLAN]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[StudentProfile].[CURRENT_PLAN_DESCR]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="5" />
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[Summary]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	CAST([CRMID] AS int) StudentAK,
+	--CAST([Term] AS int) TermAK,
+	CAST(CONVERT( varchar(10),CAST(t.StartDate AS date), 112) AS int) EnrollmentTermDateAK,
+	CAST(LEFT([InState_OutState], 1) AS char(1)) ResidencyStatusAK,
+	CAST(LEFT([Academic_Level], 2) AS varchar(2)) AcademicLevelAK,
+	CAST([Term_Credit_Attempted] AS int) CreditHoursAttempted,
+	CAST([Term_Credits_Earned] AS int) CreditHoursEearned,
+	CAST([Term_GPA] AS decimal(5,3)) TermGPA,
+	CAST([Transfer_Credit] AS decimal(6,3)) TransferCredit,
+	CAST([Cum_Credits_Attempted] AS int) CumCreditHoursAttempted,
+	CAST([Cum_Credits_Earned] AS int) CumCreditHoursEarned,
+	CAST([Cum_GPA] AS decimal(5,3)) CumGPA
+FROM dbo.EnrollmentSummary es
+INNER JOIN dbo.Term t
+	ON es.Term = t.TermAK]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[StudentAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[EnrollmentTermDateAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[ResidencyStatusAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[AcademicLevelAK]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[CreditHoursAttempted]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[CreditHoursEearned]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[TermGPA]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[TransferCredit]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[CumCreditHoursAttempted]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[CumCreditHoursEarned]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Summary].[CumGPA]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Term]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[Term]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Term].[TermAK]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[CRMID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Term].[StartDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[InState_OutState]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[Academic_Level]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[Term_Credit_Attempted]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[Term_Credits_Earned]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[decimal]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[Term_GPA]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[Transfer_Credit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[Cum_Credits_Attempted]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[Cum_Credits_Earned]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EnrollmentSummary].[Cum_GPA]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="784" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Summary&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Term]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Term].[TermID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Term].[Term]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Term].[SchoolYear]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Term].[StartDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Term].[EndDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Term].[TermAK]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="6" />
+		</Element>
+	</Model>
+</DataSchemaModel>
