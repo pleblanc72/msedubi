@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Source_OLTP"
+  DTS:DTSID="{507BAFE4-6DD1-4512-8E28-EE39BEFDBDBA}"
+  DTS:CreationName="OLEDB"
+  p1:Salt="1Sj2NCZy2w=="
+  p1:IV="RuKWnJCjOmU=" xmlns:p1="www.microsoft.com/SqlServer/SSIS">Lne0B2aPptW36MivNzD88OCDTgfiCQRzXIa90sEkA3w5m0W9xD8iswyRthL8g6I/bdIotm3VSAw7zHa4Vg8nmlPuaaZa4CgCY5/3FrBbCfMm30RPijG8/K57lv/PIuMG2YaNaf4E882ifHqdzJFnXpizd4uy3DBeb6RrsKeoTW7bOqVB75bACves0VtGmkWWnYcHmVZQPi11sRSmx20Uej8rSSZlOeR+qLOYIVYllskAkHSXx49NaozXskxoCfnMbcb54GwW9xdU6gf6P3R/m6gY4ZBpwdVMy1dWNmerLGXBIzfBEgv6sG+Y/77gI7dZEuiQrjKUdQo2H0b6KsISRKThXd83EZj8gjW+DYch3CJ3qOw0M/LQt8YU8Jy4XCa++mugnVjX0ihw48U5ZQeNZ1Y9Zb5hRjNfvIpdlJoxAF4yDuecBlRxLI9MwTVx6bTdrJXOcoovCbus7LYhrqMHJj343WcQjCUG6nUjQAaM+twYCiBpwTNkU2dikFqA13NES+OhVz/5Hv9i+foBwH3qZyLixcO7w2k25B7VasMXxz6KQ1cfq1O3+eW7rXDFUaO9rAnN60wdfxMzQZegTGFOEANQw+E+H5Z4frhN7WBWiY/8T7j5hpabFsfpCjxuoLiGubXn6nwhnOxfh/wPVi8DL1MR8sQRmZ/9MAs6mnBLQRFDfQIBIxbQa0ScO04kCWcoPJ/1RsQ7IQxbebnrMxqsDXku2CtgMMRRBD9OVdvGS9iDfZrUTIHk+2WptJJiTjm2XL2THJqutevDI0HIix7kb+3mC3z7FFo0A8JofzkhUtUZhfG8DF0vDJxKIjcVFIHE</DTS:ConnectionManager>
