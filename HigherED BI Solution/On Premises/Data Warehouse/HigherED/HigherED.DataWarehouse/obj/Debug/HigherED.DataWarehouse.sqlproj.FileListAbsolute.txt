@@ -1,5 +1,0 @@
-C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\bin\Debug\HigherED.DataWarehouse.dacpac
-C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\bin\Debug\HigherED.DataWarehouse.dll
-C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\bin\Debug\HigherED.DataWarehouse.pdb
-C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\obj\Debug\HigherED.DataWarehouse.dll
-C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\obj\Debug\HigherED.DataWarehouse.pdb
