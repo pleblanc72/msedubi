@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[DimDate] (
+    [DateSK]                      INT          NOT NULL,
+    [FullDate]                    DATETIME     NOT NULL,
+    [Day]                         TINYINT      NOT NULL,
+    [DayOfWeek]                   VARCHAR (9)  NOT NULL,
+    [DayOfWeekNumber]             INT          NOT NULL,
+    [DayOfWeekInMonth]            TINYINT      NOT NULL,
+    [CalendarMonthNumber]         TINYINT      NOT NULL,
+    [CalendarMonthName]           VARCHAR (9)  NOT NULL,
+    [CalendarQuarterNumber]       TINYINT      NOT NULL,
+    [CalendarQuarterName]         VARCHAR (6)  NOT NULL,
+    [CalendarYearNumber]          INT          NOT NULL,
+    [StandardDate]                VARCHAR (10) NULL,
+    [WeekDayFlag]                 BIT          NOT NULL,
+    [HolidayFlag]                 BIT          NOT NULL,
+    [OpenFlag]                    BIT          NOT NULL,
+    [FirstDayOfCalendarMonthFlag] BIT          NOT NULL,
+    [LastDayOfCalendarMonthFlag]  BIT          NOT NULL,
+    [HolidayText]                 VARCHAR (50) NULL,
+    [Term]                        VARCHAR (10) NULL,
+    [TermNumber]                  INT          NULL,
+    [SchoolYear]                  INT          NULL,
+    [TermAK]                      INT          NULL,
+    CONSTRAINT [PK_DimDate] PRIMARY KEY CLUSTERED ([DateSK] ASC) WITH (FILLFACTOR = 90)
+);
+
