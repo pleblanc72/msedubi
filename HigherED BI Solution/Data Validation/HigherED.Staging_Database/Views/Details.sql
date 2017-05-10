@@ -1,4 +1,5 @@
-﻿CREATE VIEW dbo.Details
+﻿
+CREATE VIEW dbo.Details
 AS
 SELECT 
 	CAST([CRMID] AS int) StudentAK,
@@ -16,4 +17,5 @@ SELECT
 FROM dbo.EnrollmentDetails ed
 INNER JOIN dbo.Term t
 	ON ed.Term = t.TermAK
+WHERE CAST([CRMID] AS int) NOT IN (7148439,7201266,7204322,7270570,7309516,7634219);
 GO

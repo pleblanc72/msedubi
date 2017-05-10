@@ -4,16 +4,16 @@
     <Name>HigherED.Staging</Name>
     <LastWriteTime>2017-04-28T16:24:46.6322486Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptAllWithPassword</LastKnownProtectionLevel>
-    <Salt>RxNjzgwS</Salt>
-    <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJapyDr3qjUi1RojqitI+pAAAAAACAAAAAAADZgAAwAAAABAAAABXuy436Zd3lYe0BaM/ctKKAAAAAASAAACgAAAAEAAAAB/KInA/lLpi89EuRIEwYfUoAAAAvyB+rGMnufN7JXtzBzKRRTcYKNUVMQ3jrFfpqr1VhWwayF3AWjOMiBQAAABo8ldFozPGphVo69AdDXHQk/AuyQ==</LastKnownProtectedHashedPassword>
+    <Salt>mI3ERvKL</Salt>
+    <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJapyDr3qjUi1RojqitI+pAAAAAACAAAAAAADZgAAwAAAABAAAABVjEFs95AKEG0ns6YlFlNXAAAAAASAAACgAAAAEAAAAOuDHkwFRdLlq+/rKzxMW1koAAAASp6I8x9PmM14vBWHtCRuQ3wYbwvCRyynx1um5WElemNSEyDsUGaHkRQAAAAJ8VnHjpBV05jP8szRzRo61ec4vg==</LastKnownProtectedHashedPassword>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Import CSV Files.dtsx</Name>
-      <LastWriteTime>2017-04-28T15:09:05.82659Z</LastWriteTime>
+      <LastWriteTime>2017-05-10T16:59:11.1214152Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptAllWithPassword</LastKnownProtectionLevel>
-      <Salt>JKsp2HJ2</Salt>
-      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJapyDr3qjUi1RojqitI+pAAAAAACAAAAAAADZgAAwAAAABAAAACsXtvvSzJApZ/QBIKypodzAAAAAASAAACgAAAAEAAAAB/1maRXJURPPEQC1IfDOl8oAAAAJ29ksEwcVxqkAOzJHsEH1QoTFNbGYMfgh6dRkfFaeSXAdr2gC0YNtRQAAAALnT3+No7rLKZlE9S9zHLRRp3S4Q==</LastKnownProtectedHashedPassword>
+      <Salt>/DJBj9mf</Salt>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJapyDr3qjUi1RojqitI+pAAAAAACAAAAAAADZgAAwAAAABAAAAArJHwR+5aSfhkehgeiOYzpAAAAAASAAACgAAAAEAAAAKQup5DvXekj1zaLZGCTSWwoAAAASR04l6c2+guvnvF3qLVEZJbgZXMgXmMC+H58pE42fceTJ/PDK3HA5RQAAACn7u/v8UDiDGJbcrL5aMRFA2JzwA==</LastKnownProtectedHashedPassword>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
 </BuildLog>
