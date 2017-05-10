@@ -3,3 +3,7 @@ C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Prem
 C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\bin\Debug\HigherED.DataWarehouse.pdb
 C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\obj\Debug\HigherED.DataWarehouse.dll
 C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\obj\Debug\HigherED.DataWarehouse.pdb
+C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\obj\Debug\Model.xml
+C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\obj\Debug\refactor.xml
+C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\obj\Debug\postdeploy.sql
+C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\obj\Debug\predeploy.sql
