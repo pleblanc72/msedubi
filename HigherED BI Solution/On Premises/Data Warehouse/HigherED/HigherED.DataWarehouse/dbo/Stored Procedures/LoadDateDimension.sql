@@ -364,7 +364,7 @@ SET
 	d.SchoolYear = t.SchoolYear,
 	d.TermAK = t.TermAK
 FROM DimDate d
-LEFT OUTER JOIN dbo.Term t
+LEFT OUTER JOIN HigherED_Staging.dbo.dbo.Term t
 	ON d.fullDate between t.StartDate  and t.EndDate
 
 /* Insert default date row */
