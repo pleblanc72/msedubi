@@ -22,3 +22,9 @@ C:\Users\duryan\OneDrive - Microsoft\MS EDU SA Resources\Repeatable Solutions\20
 C:\Users\duryan\OneDrive - Microsoft\MS EDU SA Resources\Repeatable Solutions\2016-10-10 Branch\Higher ED Solution\HigherED\HigherED.Tabular\obj\Development\Model.asdatabase
 C:\Users\duryan\OneDrive - Microsoft\MS EDU SA Resources\Repeatable Solutions\2016-10-10 Branch\Higher ED Solution\HigherED\HigherED.Tabular\obj\Development\Model.deploymentoptions
 C:\Users\duryan\OneDrive - Microsoft\MS EDU SA Resources\Repeatable Solutions\2016-10-10 Branch\Higher ED Solution\HigherED\HigherED.Tabular\obj\Development\Model.deploymenttargets
+C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\SSAS Tabular\HigherED.Tabular\bin\Model.asdatabase
+C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\SSAS Tabular\HigherED.Tabular\bin\Model.deploymenttargets
+C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\SSAS Tabular\HigherED.Tabular\bin\Model.deploymentoptions
+C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\SSAS Tabular\HigherED.Tabular\obj\Development\Model.asdatabase
+C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\SSAS Tabular\HigherED.Tabular\obj\Development\Model.deploymentoptions
+C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\SSAS Tabular\HigherED.Tabular\obj\Development\Model.deploymenttargets

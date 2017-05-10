@@ -3,6 +3,6 @@
                     xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100"
                     xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200">
                     <Database>HigherEDTabular</Database>
-                    <Server>localhost</Server>
-                    <ConnectionString>DataSource=localhost;Timeout=0</ConnectionString>
+                    <Server>sqllunch-as-02</Server>
+                    <ConnectionString>DataSource=sqllunch-as-02;Timeout=0</ConnectionString>
                 </DeploymentTarget>

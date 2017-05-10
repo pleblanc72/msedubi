@@ -1,15 +1,14 @@
 {
   "name": "SemanticModel",
-  "id": "SemanticModel",
   "compatibilityLevel": 1200,
   "model": {
     "culture": "en-US",
     "dataSources": [
       {
         "name": "SqlServer localhost HigherEdDW",
-        "connectionString": "Provider=SQLNCLI11.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HigherED_DW;Data Source=duryan-sb01",
+        "connectionString": "Provider=SQLNCLI11.1;Integrated Security=SSPI;Persist Security Info=False;User ID=;Initial Catalog=HigherED_DW;Data Source=sqllunch-sql-01;Initial File Name=;Server SPN=",
         "impersonationMode": "impersonateAccount",
-        "account": "northamerica\\duryan",
+        "account": "sqllunch\\pleblanc",
         "annotations": [
           {
             "name": "ConnectionEditUISource",
@@ -2979,13 +2978,6 @@
         "toColumn": "AcademicProgramSK"
       },
       {
-        "name": "4fb256b3-718f-4df0-9aad-2e65fde927d7",
-        "fromTable": "Admissions",
-        "fromColumn": "AdmitTypeSK",
-        "toTable": "Admit Type",
-        "toColumn": "AdmitTypeSK"
-      },
-      {
         "name": "cbfc3ad4-0dff-49bb-8f17-e62f01ac7bb5",
         "fromTable": "Admissions",
         "fromColumn": "ApplicationSourceSK",
@@ -3061,7 +3053,15 @@
         "fromColumn": "AdmitDateSK",
         "toTable": "Date",
         "toColumn": "DateSK"
+      },
+      {
+        "name": "4fb256b3-718f-4df0-9aad-2e65fde927d7",
+        "fromTable": "Admissions",
+        "fromColumn": "AdmitTypeSK",
+        "toTable": "Admit Type",
+        "toColumn": "AdmitTypeSK"
       }
     ]
-  }
+  },
+  "id": "SemanticModel"
 }
