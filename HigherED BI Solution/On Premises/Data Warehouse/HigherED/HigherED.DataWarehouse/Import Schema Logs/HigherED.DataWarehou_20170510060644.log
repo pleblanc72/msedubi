@@ -1,0 +1,84 @@
+5/10/2017 6:06:44 PM	This log contains information about the import schema operation into project 'HigherED.DataWarehouse' on computer 'SQLLUNCH-SQL-01' by user 'pleblanc'.
+5/10/2017 6:06:44 PM	Import of database schema has started.
+5/10/2017 6:06:50 PM	Gathering database credentials
+5/10/2017 6:06:50 PM	Gathering database options
+5/10/2017 6:06:50 PM	Gathering users
+5/10/2017 6:06:50 PM	Gathering roles
+5/10/2017 6:06:50 PM	Gathering application roles
+5/10/2017 6:06:50 PM	Gathering role memberships
+5/10/2017 6:06:50 PM	Gathering filegroups
+5/10/2017 6:06:50 PM	Gathering full-text catalogs
+5/10/2017 6:06:50 PM	Gathering assemblies
+5/10/2017 6:06:50 PM	Gathering certificates
+5/10/2017 6:06:50 PM	Gathering asymmetric keys
+5/10/2017 6:06:50 PM	Gathering symmetric keys
+5/10/2017 6:06:50 PM	Gathering encrypted symmetric keys
+5/10/2017 6:06:50 PM	Gathering schemas
+5/10/2017 6:06:50 PM	Gathering XML schema collections
+5/10/2017 6:06:50 PM	Gathering user-defined data types
+5/10/2017 6:06:50 PM	Gathering user-defined types
+5/10/2017 6:06:50 PM	Gathering table types
+5/10/2017 6:06:50 PM	Gathering unique keys for table types
+5/10/2017 6:06:50 PM	Gathering primary keys for table types
+5/10/2017 6:06:50 PM	Gathering indexes for table types
+5/10/2017 6:06:50 PM	Gathering check constraints for table types
+5/10/2017 6:06:50 PM	Gathering default constraints for table types
+5/10/2017 6:06:50 PM	Gathering partition functions
+5/10/2017 6:06:50 PM	Gathering partition schemes
+5/10/2017 6:06:50 PM	Gathering functions
+5/10/2017 6:06:50 PM	Gathering encrypted functions
+5/10/2017 6:06:50 PM	Gathering aggregates
+5/10/2017 6:06:50 PM	Gathering procedures
+5/10/2017 6:06:50 PM	Gathering encrypted procedures
+5/10/2017 6:06:50 PM	Gathering tables
+5/10/2017 6:06:50 PM	Gathering primary keys
+5/10/2017 6:06:50 PM	Gathering unique constraints
+5/10/2017 6:06:50 PM	Gathering foreign keys
+5/10/2017 6:06:50 PM	Gathering default constraints
+5/10/2017 6:06:50 PM	Gathering check constraints
+5/10/2017 6:06:50 PM	Gathering views
+5/10/2017 6:06:50 PM	Gathering encrypted views
+5/10/2017 6:06:50 PM	Gathering indexes
+5/10/2017 6:06:50 PM	Gathering statistics
+5/10/2017 6:06:50 PM	Gathering full-text index stoplists
+5/10/2017 6:06:50 PM	Gathering search property lists
+5/10/2017 6:06:50 PM	Gathering search properties
+5/10/2017 6:06:50 PM	Gathering full-text indexes
+5/10/2017 6:06:50 PM	Gathering column store indexes
+5/10/2017 6:06:50 PM	Gathering spatial indexes
+5/10/2017 6:06:50 PM	Gathering XML indexes
+5/10/2017 6:06:50 PM	Gathering Selective XML indexes
+5/10/2017 6:06:50 PM	Gathering encrypted triggers
+5/10/2017 6:06:50 PM	Gathering triggers
+5/10/2017 6:06:50 PM	Gathering encrypted and clr ddl triggers
+5/10/2017 6:06:50 PM	Gathering ddl triggers
+5/10/2017 6:06:50 PM	Gathering synonyms
+5/10/2017 6:06:50 PM	Gathering defaults
+5/10/2017 6:06:50 PM	Gathering data constraint uddt bindings
+5/10/2017 6:06:50 PM	Gathering rules
+5/10/2017 6:06:50 PM	Gathering data constraint uddt bindings
+5/10/2017 6:06:50 PM	Gathering message types
+5/10/2017 6:06:50 PM	Gathering queues
+5/10/2017 6:06:50 PM	Gathering contracts
+5/10/2017 6:06:50 PM	Gathering services
+5/10/2017 6:06:50 PM	Gathering event notifications
+5/10/2017 6:06:50 PM	Gathering remote service bindings
+5/10/2017 6:06:50 PM	Gathering broker priorities
+5/10/2017 6:06:50 PM	Gathering signatures
+5/10/2017 6:06:50 PM	Gathering data compression options
+5/10/2017 6:06:51 PM	Gathering sequence types
+5/10/2017 6:06:51 PM	Gathering security policies
+5/10/2017 6:06:51 PM	Gather column encryption keys
+5/10/2017 6:06:51 PM	Gathering column master keys
+5/10/2017 6:06:51 PM	Gathering external data sources
+5/10/2017 6:06:51 PM	Gathering external file formats
+5/10/2017 6:06:51 PM	Gathering external tables
+5/10/2017 6:06:51 PM	Gathering extended properties
+5/10/2017 6:06:51 PM	Gathering credentials
+5/10/2017 6:06:51 PM	Gathering logins
+5/10/2017 6:06:51 PM	Gathering server audits
+5/10/2017 6:06:51 PM	Scanning project for duplicate elements
+5/10/2017 6:06:51 PM	Finished duplicate element processing
+5/10/2017 6:06:51 PM	Finished importing database.
+5/10/2017 6:06:51 PM	A summary of the import was saved to the following location: C:\Users\pleblanc.SQLLUNCH\Documents\GitHub\msedubi\HigherED BI Solution\On Premises\Data Warehouse\HigherED\HigherED.DataWarehouse\Import Schema Logs\HigherED.DataWarehou_20170510060644.log
+5/10/2017 6:06:51 PM	Click Finish to continue...

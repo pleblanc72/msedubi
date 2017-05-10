@@ -1,3 +1,3 @@
 # Higher Education BI Solution
 
-Help Colleges in Universities get started with Microsoft BI.
+Help Colleges and Universities get started with Microsoft BI.
