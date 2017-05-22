@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>HigherED_DW</DataSourceReference>
+      <CommandText>SELECT DISTINCT
+ds.StudentSK AS StudentID
+,dd.[TermNumber] AS TermID
+,dc.SubjectAK AS SubjectID
+,dc.[CatalogAK] AS CatalogID
+,fed.[ClassSK] AS ClassID
+,dc.[ClassSectionAK] AS SectionID
+,CAST(
+RIGHT(LEFT(CAST(fed.[EnrollmentTermDateSK] AS varchar(8)),6),2)
++ '-' + RIGHT(CAST(fed.[EnrollmentTermDateSK] AS varchar(8)),2)
++ '-' + LEFT(CAST(fed.[EnrollmentTermDateSK] AS varchar(8)),4)
+AS [date]) AS DateKey
+,ds.Gender
+,dd.SchoolYear
+,dd.Term
+,dc.SubjectAK AS [Subject]
+,dc.[CatalogAK] AS [Catalog]
+,dc.[ClassSectionAK] AS [Section]
+,dc.Title AS Class
+,dc.CreditHours
+,fed.MidTermGrade
+,fed.EndSemesterGrade
+,rs.ReturningStudent
+,CASE WHEN rs.ReturningStudent IS NULL THEN 1 ELSE NULL END AS NewStudent
+,1 AS Students
+FROM
+[dbo].[FactEnrollmentDetails] fed
+INNER JOIN [dbo].[DimStudent] ds ON fed.StudentSK = ds.StudentSK
+INNER JOIN [dbo].[DimDate] dd ON fed.[EnrollmentTermDateSK] = dd.[DateSK]
+INNER JOIN [dbo].[DimClass] dc ON fed.ClassSK = dc.ClassSK
+LEFT OUTER JOIN (SELECT fedi.StudentSK, ddi.SchoolYear, ddi.TermNumber, 1 AS ReturningStudent FROM [dbo].[FactEnrollmentDetails] fedi INNER JOIN [dbo].[DimDate] ddi ON fedi.[EnrollmentTermDateSK] = ddi.[DateSK]) rs 
+ON fed.StudentSK = rs.StudentSK AND (dd.SchoolYear - 1) = rs.SchoolYear AND dd.TermNumber = rs.TermNumber
+WHERE
+ds.StudentSK  &gt; 0
+AND dd.SchoolYear IN (2005,2006,2007)</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="StudentID">
+        <DataField>StudentID</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="TermID">
+        <DataField>TermID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="SubjectID">
+        <DataField>SubjectID</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CatalogID">
+        <DataField>CatalogID</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ClassID">
+        <DataField>ClassID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="SectionID">
+        <DataField>SectionID</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DateKey">
+        <DataField>DateKey</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Gender">
+        <DataField>Gender</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SchoolYear">
+        <DataField>SchoolYear</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Term">
+        <DataField>Term</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Subject">
+        <DataField>Subject</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Catalog">
+        <DataField>Catalog</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Section">
+        <DataField>Section</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Class">
+        <DataField>Class</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CreditHours">
+        <DataField>CreditHours</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="MidTermGrade">
+        <DataField>MidTermGrade</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="EndSemesterGrade">
+        <DataField>EndSemesterGrade</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ReturningStudent">
+        <DataField>ReturningStudent</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="NewStudent">
+        <DataField>NewStudent</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Students">
+        <DataField>Students</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+  <rd:ReportServerUrl>http://localhost/ReportServer</rd:ReportServerUrl>
+</SharedDataSet>
