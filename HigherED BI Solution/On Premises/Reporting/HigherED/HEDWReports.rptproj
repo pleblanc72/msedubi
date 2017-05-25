@@ -6,6 +6,10 @@
       <Name>HigherED_DW.rds</Name>
       <FullPath>HigherED_DW.rds</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>HigherED_SSASTabular.rds</Name>
+      <FullPath>HigherED_SSASTabular.rds</FullPath>
+    </ProjectItem>
   </DataSources>
   <DataSets>
     <ProjectItem>
@@ -19,6 +23,14 @@
     <ProjectItem>
       <Name>EnrollmentDetailsMobile.rsd</Name>
       <FullPath>EnrollmentDetailsMobile.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>KPI Trend Admission.rsd</Name>
+      <FullPath>KPI Trend Admission.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>KPI_CurrentYearAdmissions.rsd</Name>
+      <FullPath>KPI_CurrentYearAdmissions.rsd</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>PDSchoolYear.rsd</Name>
@@ -50,11 +62,11 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2016</TargetServerVersion>
-        <TargetServerURL>http://localhost/reportserver</TargetServerURL>
-        <TargetFolder>HEDWReports/Reports</TargetFolder>
-        <TargetDataSourceFolder>HEDWReports/Data Sources</TargetDataSourceFolder>
-        <TargetDatasetFolder>HEDWReports/Datasets</TargetDatasetFolder>
-        <TargetReportPartFolder>HEDWReports/Report Parts</TargetReportPartFolder>
+        <TargetServerURL>http://duryan-sb01/pbireportserver</TargetServerURL>
+        <TargetFolder>Higher Ed Data Warehouse/Reports</TargetFolder>
+        <TargetDataSourceFolder>Higher Ed Data Warehouse/Data Sources</TargetDataSourceFolder>
+        <TargetDatasetFolder>Higher Ed Data Warehouse/Datasets</TargetDatasetFolder>
+        <TargetReportPartFolder>Higher Ed Data Warehouse/Report Parts</TargetReportPartFolder>
       </Options>
     </Configuration>
     <Configuration>

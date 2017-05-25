@@ -2152,6 +2152,20 @@
             "sourceColumn": "TermNumber",
             "formatString": "0",
             "summarizeBy": "none"
+          },
+          {
+            "type": "calculated",
+            "name": "IsCurrentYear",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "IF([School Year] = 2013, 1, 0) /* IF([School Year] = {some logic to calculate your current school year}, 1,0) */ "
+          },
+          {
+            "type": "calculated",
+            "name": "IsCurrentTerm",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "IF([Term] = \"Spring\" && [School Year] = 2013, 1, 0) /* IF([Term] = {some logic to calculate current term} && [School Year] = {some logic to calculate current year }, 1,0) */"
           }
         ],
         "partitions": [

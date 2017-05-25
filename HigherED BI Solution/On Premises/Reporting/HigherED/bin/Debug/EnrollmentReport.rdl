@@ -508,7 +508,7 @@
                   <VerticalAlign>Top</VerticalAlign>
                   <Color>#a6a6a6</Color>
                 </Style>
-                <DockOutsideChartArea>true</DockOutsideChartArea>
+                <Position>TopLeft</Position>
               </ChartTitle>
             </ChartTitles>
             <Palette>Pacific</Palette>
@@ -1988,6 +1988,7 @@
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
+                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                     </TablixMember>
