@@ -1,0 +1,4 @@
+C:\Azure\01 - Data Validation\Data\EnrollmentDetails.csv
+C:\Azure\01 - Data Validation\Data\EnrollmentSummary.csv
+C:\Azure\01 - Data Validation\Data\Student Profile.csv
+C:\Azure\01 - Data Validation\Data\Term.csv

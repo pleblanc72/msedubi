@@ -1,0 +1,28 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Term] (Table)
+       [dbo].[StudentProfile] (Table)
+       [dbo].[EnrollmentSummary] (Table)
+       [dbo].[EnrollmentDetails] (Table)
+       [dbo].[Summary] (View)
+       [dbo].[Details] (View)
+       [dbo].[Admission] (View)
+       [dbo].[Student] (View)
+       [dbo].[ResidencyStatus] (View)
+       [dbo].[Class] (View)
+       [dbo].[ApplicationSource] (View)
+       [dbo].[AdmitType] (View)
+       [dbo].[AcademicProgram] (View)
+       [dbo].[AcademicLevel] (View)
+
+** Supporting actions

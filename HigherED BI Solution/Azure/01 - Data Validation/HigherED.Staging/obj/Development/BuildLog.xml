@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectInfo>
+    <Name>HigherED.Staging</Name>
+    <LastWriteTime>2016-12-10T20:29:42.6623733Z</LastWriteTime>
+    <LastKnownProtectionLevel>EncryptAllWithPassword</LastKnownProtectionLevel>
+    <Salt>aFAHZ8OS</Salt>
+    <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvyYEBccEg0uy9+YgBFxt5gAAAAACAAAAAAAQZgAAAAEAACAAAAC01QCRuqX7H+gnFUiS347N03R4eIKQRFDK1nlz3qApcgAAAAAOgAAAAAIAACAAAAC1ncmXMa6f9Ju3FR0npP7oDl0SC/gv8TO73abhuy+7gDAAAACYv5nJEIR99AAUCv56XDkhirVnqNAgJpn5dVua9FzHNpISxOW5Tm7/4M0GKQuRHPBAAAAAgelcVEkyqg8knoCl0xRgxlfIDpmaVCE9Sp8gkjTQQgxaxAtvza2jphMgjs4AOagpv71HrbE+1R/PbDhJCB3OYA==</LastKnownProtectedHashedPassword>
+  </ProjectInfo>
+  <LastBuildInfos>
+    <ProjectBuildItemInfo>
+      <Name>Import CSV Files.dtsx</Name>
+      <LastWriteTime>2016-12-11T00:24:23.8398226Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptAllWithPassword</LastKnownProtectionLevel>
+      <Salt>+oA6Pv1B</Salt>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvyYEBccEg0uy9+YgBFxt5gAAAAACAAAAAAAQZgAAAAEAACAAAADUa405AbpbkT8lnEJZWgJUYnMGcfxUmJ2MKA0gnoj34gAAAAAOgAAAAAIAACAAAAB4tHzQ57s1O7ykyt4diDES6iaJCdYDo9SV/rm9/ms8JTAAAADOJ5I+ePZPUw5pXWlWLrOM812vZasoZLF/s0dplYBdD0NepoiejPCxNqPXqEwndlxAAAAADS85JIlt/gjkahOdGPPmczwR2qczMGbYQlN17JqtW6ULXZAZN6ZKUNo4VTyTaQl97xToT9L/+kPfN9EHnMJ95w==</LastKnownProtectedHashedPassword>
+    </ProjectBuildItemInfo>
+  </LastBuildInfos>
+</BuildLog>
