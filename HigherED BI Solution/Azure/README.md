@@ -6,3 +6,8 @@ Solutions needed to deploy BI to Azure:
 * ARM template to provision Azure PaaS
 * Instructions to provision Azure PaaS using Azure Portal
 * [Optional] Instructions to provision Azure IaaS using Azure Portal
+
+01 - Data Validation
+* Database Project to provision HigherED_Staging database
+* Integration Services Package to load HigherED_Staging database
+* Validation query to validate hackathon data load
