@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "HigherED.LoadDW", "HigherED.LoadDW\HigherED.LoadDW.dtproj", "{51FB05A0-2A37-4A5F-A6B7-786DC2FECF67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|x86 = Development|x86
+		Production|x86 = Production|x86
+		Production1|x86 = Production1|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51FB05A0-2A37-4A5F-A6B7-786DC2FECF67}.Development|x86.ActiveCfg = Development
+		{51FB05A0-2A37-4A5F-A6B7-786DC2FECF67}.Development|x86.Build.0 = Development
+		{51FB05A0-2A37-4A5F-A6B7-786DC2FECF67}.Production|x86.ActiveCfg = Production
+		{51FB05A0-2A37-4A5F-A6B7-786DC2FECF67}.Production|x86.Build.0 = Production
+		{51FB05A0-2A37-4A5F-A6B7-786DC2FECF67}.Production1|x86.ActiveCfg = Production
+		{51FB05A0-2A37-4A5F-A6B7-786DC2FECF67}.Production1|x86.Build.0 = Production
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

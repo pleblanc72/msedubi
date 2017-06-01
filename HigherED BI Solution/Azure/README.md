@@ -15,3 +15,8 @@ Solutions needed to deploy BI to Azure:
 02 - Data Warehouse
 * Database Project to provision HigherED_DW database.
 * Post-execution script to grant access to Proxy user.
+
+03 - SSIS ETL
+* Integration Services Packages used to load HigherED_DW tables.
+* DimDate table is loaded using stored procedure.
+* T-SQL Script to modify HigherED_DW size, edition and service objective.
