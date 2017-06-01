@@ -20,3 +20,8 @@ Solutions needed to deploy BI to Azure:
 * Integration Services Packages used to load HigherED_DW tables.
 * DimDate table is loaded using stored procedure.
 * T-SQL Script to modify HigherED_DW size, edition and service objective.
+
+04 - SSAS Tabular
+* Analysis Services Tabular model using HigherED_DW as data source.
+* Deploy and process using SSMS.
+* Some connectivity restrictions...
