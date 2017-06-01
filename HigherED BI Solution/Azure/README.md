@@ -25,3 +25,7 @@ Solutions needed to deploy BI to Azure:
 * Analysis Services Tabular model using HigherED_DW as data source.
 * Deploy and process using SSMS.
 * Some connectivity restrictions...
+
+05 - SSRS Reporting
+* Reporting Services Reports using HigherED_DW as data source.
+* Enrollment Report with drillthrough to Enrollment Detail Report.
