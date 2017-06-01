@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="HigherED_DW">
+  <ConnectionProperties>
+    <Extension>SQLAZURE</Extension>
+    <ConnectString>Data Source=hedwsp01.database.windows.net;Initial Catalog=HigherED_DW</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>f670bda9-329b-48a9-9ed4-826cf75b3621</DataSourceID>
+</RptDataSource>

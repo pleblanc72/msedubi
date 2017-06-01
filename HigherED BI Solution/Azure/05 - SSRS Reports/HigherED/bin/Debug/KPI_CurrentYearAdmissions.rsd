@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>HigherED_DW</DataSourceReference>
+      <CommandText>SELECT
+MAX(SchoolYear) AS SchoolYear
+,SUM([Headcount SPLY]) AS [Headcount SPLY]
+,SUM([Headcount]) AS [Headcount]
+,CASE 
+WHEN SUM([Headcount]) &gt; SUM([Headcount SPLY]) THEN 1
+WHEN SUM([Headcount]) = SUM([Headcount SPLY]) THEN 0
+ELSE -1
+END AS [Headcount Growth]
+FROM
+(
+SELECT
+dd.SchoolYear
+,NULL AS [Headcount SPLY]
+,COUNT(DISTINCT fa.StudentSK) AS [Headcount]
+FROM
+[dbo].[FactAdmission] fa 
+INNER JOIN [dbo].[DimDate] dd ON fa.AdmitDateSK = dd.DateSK
+WHERE
+dd.SchoolYear = 2013
+GROUP BY
+dd.SchoolYear
+UNION ALL
+SELECT
+dd.SchoolYear
+,COUNT(DISTINCT fa.StudentSK) AS [Headcount SPLY]
+,NULL AS [Headcount]
+FROM
+[dbo].[FactAdmission] fa 
+INNER JOIN [dbo].[DimDate] dd ON fa.AdmitDateSK = dd.DateSK
+WHERE
+dd.SchoolYear = 2012
+GROUP BY
+dd.SchoolYear
+) a
+</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>MDX</CommandType>
+          <Type>Query</Type>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Date</DimensionName>
+                    <HierarchyName>School Year</HierarchyName>
+                    <HierarchyUniqueName>[Date].[School Year]</HierarchyUniqueName>
+                    <LevelName>School Year</LevelName>
+                    <UniqueName>[Date].[School Year].[School Year]</UniqueName>
+                  </ID>
+                  <ItemCaption>School Year</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Headcount SPLY</MeasureName>
+                    <UniqueName>[Measures].[Headcount SPLY]</UniqueName>
+                  </ID>
+                  <ItemCaption>Headcount SPLY</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Headcount</MeasureName>
+                    <UniqueName>[Measures].[Headcount]</UniqueName>
+                  </ID>
+                  <ItemCaption>Headcount</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Headcount Growth</MeasureName>
+                    <UniqueName>[Measures].[Headcount Growth]</UniqueName>
+                  </ID>
+                  <ItemCaption>Headcount Growth</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <From>Model</From>
+            <Filter>
+              <FilterItems />
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties />
+          </QuerySpecification>
+          <Query>
+            <Statement>with member [Measures].[Headcount Growth] as 
+case when [Measures].[Headcount] &gt; [Measures].[Headcount SPLY] then 1
+when [Measures].[Headcount] = [Measures].[Headcount SPLY] then 0
+else -1
+end 
+
+SELECT NON EMPTY { [Measures].[Headcount SPLY], [Measures].[Headcount], [Measures].[Headcount Growth] } ON COLUMNS, 
+NON EMPTY { ([Date].[School Year].[School Year].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS 
+
+FROM [Model] 
+
+WHERE [Date].[IsCurrentYear].&amp;[1]
+
+CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="SchoolYear">
+        <DataField>SchoolYear</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Headcount_SPLY">
+        <DataField>Headcount SPLY</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Headcount">
+        <DataField>Headcount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Headcount_Growth">
+        <DataField>Headcount Growth</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
