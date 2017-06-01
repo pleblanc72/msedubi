@@ -1,0 +1,45 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Term] (Table)
+       [dbo].[stage_EventDrivenEnrollmentDetails] (Table)
+       [dbo].[FactEnrollmentSummary] (Table)
+       [dbo].[FactEnrollmentDetails] (Table)
+       [dbo].[FactAdmission] (Table)
+       [dbo].[EventDrivenEnrollmentDetails] (Table)
+       [dbo].[DimStudent] (Table)
+       [dbo].[DimResidencyStatus] (Table)
+       [dbo].[DimDate] (Table)
+       [dbo].[DimClass] (Table)
+       [dbo].[DimApplicationSource] (Table)
+       [dbo].[DimAdmitType] (Table)
+       [dbo].[DimAcademicProgram] (Table)
+       [dbo].[DimAcademicLevel] (Table)
+       [dbo].[FK_FactEnrollmentSummary_To_DimAcademicLevel_On_AcademicLevelSK] (Foreign Key)
+       [dbo].[FK_FactEnrollmentSummary_To_DimDate_On_EnrollmentTermDateSK] (Foreign Key)
+       [dbo].[FK_FactEnrollmentSummary_To_DimResidencyStatus_On_ResidencyStatusSK] (Foreign Key)
+       [dbo].[FK_FactEnrollmentSummary_To_DimStudent_On_StudentSK] (Foreign Key)
+       [dbo].[FK_FactEnrollmentDetails_To_DimClass_On_ClassSK] (Foreign Key)
+       [dbo].[FK_FactEnrollmentDetails_To_DimDate_On_DropDateSK] (Foreign Key)
+       [dbo].[FK_FactEnrollmentDetails_To_DimDate_On_EnrollDateSK] (Foreign Key)
+       [dbo].[FK_FactEnrollmentDetails_To_DimDate_On_EnrollmentTermDateSK] (Foreign Key)
+       [dbo].[FK_FactEnrollmentDetails_To_DimStudent_On_StudentSK] (Foreign Key)
+       [dbo].[FK_FactAdmission_To_DimAcademicProgram_On_AcademicProgramSK] (Foreign Key)
+       [dbo].[FK_FactAdmission_To_DimAcademicProgram_On_CurrentAcademicProgram] (Foreign Key)
+       [dbo].[FK_FactAdmission_To_DimAdmitType_On_AdmitTypeSK] (Foreign Key)
+       [dbo].[FK_FactAdmission_To_DimApplicationSource_On_ApplicationSourceSK] (Foreign Key)
+       [dbo].[FK_FactAdmission_To_DimDateSK_On_AdmitDateSK] (Foreign Key)
+       [dbo].[FK_FactAdmission_To_DimStudent_On_StudentSK] (Foreign Key)
+       [dbo].[uspUnknownRow] (Procedure)
+       [dbo].[LoadDateDimension] (Procedure)
+
+** Supporting actions

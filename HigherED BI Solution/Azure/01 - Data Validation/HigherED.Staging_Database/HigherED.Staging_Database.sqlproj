@@ -59,6 +59,7 @@
     <Folder Include="Properties" />
     <Folder Include="Views" />
     <Folder Include="Tables" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\EnrollmentDetails.sql" />
@@ -75,8 +76,6 @@
     <Build Include="Views\Admission.sql" />
     <Build Include="Views\Details.sql" />
     <Build Include="Views\Summary.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <PostDeploy Include="Script.PostDeploymentGrantProxyUser.sql" />
+    <PostDeploy Include="Scripts\Script.PostDeploymentGrantProxyUser.sql" />
   </ItemGroup>
 </Project>

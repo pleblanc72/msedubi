@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[stage_EventDrivenEnrollmentDetails] (
+    [ClassSK]              INT          NULL,
+    [DropDateSK]           INT          NULL,
+    [EnrollDateSK]         INT          NULL,
+    [EnrollmentTermDateSK] INT          NULL,
+    [StudentSK]            BIGINT       NULL,
+    [SubjectAK]            VARCHAR (10) NULL,
+    [CatalogAK]            VARCHAR (10) NULL,
+    [ClassSectionAK]       VARCHAR (5)  NULL,
+    [Age]                  INT          NULL,
+    [Gender]               VARCHAR (20) NULL,
+    [City]                 VARCHAR (75) NULL,
+    [StateAbbrev]          VARCHAR (3)  NULL,
+    [PostalCode]           VARCHAR (15) NULL,
+    [AdmitTerm]            INT          NULL,
+    [Term]                 VARCHAR (10) NULL,
+    [SchoolYear]           INT          NULL,
+    [Subject]              VARCHAR (10) NULL,
+    [Catalog]              VARCHAR (10) NULL,
+    [Section]              VARCHAR (5)  NULL,
+    [Class]                VARCHAR (50) NULL,
+    [CreditHours]          INT          NULL,
+    [Enrolled]             INT          NULL,
+    [Dropped]              INT          NULL,
+    [MidTermGrade]         VARCHAR (5)  NULL,
+    [EndSemesterGrade]     VARCHAR (5)  NULL
+);
+
