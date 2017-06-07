@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [MLInput].[TrainedModels]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [MLInput].[TrainedModels].[Model_Name] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [MLInput].[TrainedModels] (Default Constraint)
+       unnamed constraint on [MLInput].[TrainedModels] (Default Constraint)
+     Table rebuild
+       [MLInput].[TrainedModels] (Table)
+
+** Supporting actions
+
+The column [MLInput].[TrainedModels].[Model_Name] is being dropped, data loss could occur.
+
