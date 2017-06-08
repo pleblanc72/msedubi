@@ -1,6 +1,10 @@
 # Higher Education BI Solution - Azure 
 
+<<<<<<< HEAD
 Solutions needed to deploy SQL Server ML Services project:
+=======
+Solutions needed to deploy SQL Server Machine Learning:
+>>>>>>> e8962c3f4d0d895fe4fde42762438100a1f51723
 
 HigherED.MLRProject
 * Stored procedure with embedded R Scripts to train 
