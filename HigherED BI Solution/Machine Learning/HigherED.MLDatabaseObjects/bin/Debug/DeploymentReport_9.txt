@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [MLOutput].[StudentDropClass_rx]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [MLOutput].[StudentDropClass_rx].[DropoutLowerConfidence] is being dropped, data loss could occur.
+       The column [MLOutput].[StudentDropClass_rx].[DropoutUpperConfidence] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [MLOutput].[StudentDropClass_rx] (Default Constraint)
+     Table rebuild
+       [MLOutput].[StudentDropClass_rx] (Table)
+
+** Supporting actions
+
+The column [MLOutput].[StudentDropClass_rx].[DropoutLowerConfidence] is being dropped, data loss could occur.
+The column [MLOutput].[StudentDropClass_rx].[DropoutUpperConfidence] is being dropped, data loss could occur.
+If this deployment is executed, changes to [MLOutput].[StudentDropClass_rx] might introduce run-time errors in [dbo].[Predict_StudentDropClass_MLOutput].
+
