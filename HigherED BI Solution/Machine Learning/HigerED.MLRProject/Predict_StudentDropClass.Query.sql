@@ -15,16 +15,14 @@ SELECT
 ,[SectionID]
 ,[EnrollDate]
 
+/* Label for validation */
+,[Dropped]
+
 /* Include highest value features */
 ,[Age]
 ,[Class]
 ,[CreditHours]
 ,[Gender]
 ,[MidTermGrade]
-,[Subject]
-,[Term]
-
-/* Label for validation */
-,[Dropped]
 FROM
 MLInput.DropClass;

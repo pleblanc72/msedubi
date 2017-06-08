@@ -5,7 +5,7 @@
 * Features: All remaining columns, some needed to relate
 *			to input data for analysis
 */
-SELECT
+SELECT 
 /* ID columns */
 /*
 [StudentID]
@@ -37,8 +37,8 @@ SELECT
 --,[SchoolYear]
 --,[Section]
 --,[StateAbbrev]
-,[Subject]
-,[Term]
+--,[Subject]
+--,[Term]
 /* Label */
 ,[Dropped]
 FROM

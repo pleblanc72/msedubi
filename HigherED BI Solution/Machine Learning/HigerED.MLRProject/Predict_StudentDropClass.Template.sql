@@ -12,7 +12,7 @@ EXEC sp_execute_external_script @language = N'R'
 	, @params = N'@rx_model varbinary(max)'
 	, @rx_model = @rx_model
 --- Edit this line to handle the output data frame.
-    WITH RESULT SETS ( ("StudentID" int,"TermID" int,"SubjectID" varchar(10),"CatalogID" varchar(10),"ClassID" int,"SectionID" varchar(5),"EnrollDate" int,"DropoutFlag" int, "Score" float) );
+    WITH RESULT SETS ( ("StudentID" int,"TermID" int,"SubjectID" varchar(10),"CatalogID" varchar(10),"ClassID" int,"SectionID" varchar(5),"EnrollDate" int,"DropoutFlag" int,"Score" float) );
 END;
 GO
 

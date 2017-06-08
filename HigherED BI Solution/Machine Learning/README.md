@@ -1,6 +1,6 @@
 # Higher Education BI Solution - Azure 
 
-Solutions needed to deploy BI to Azure:
+Solutions needed to deploy SQL Server ML Services project:
 
 HigherED.MLRProject
 * Stored procedure with embedded R Scripts to train 

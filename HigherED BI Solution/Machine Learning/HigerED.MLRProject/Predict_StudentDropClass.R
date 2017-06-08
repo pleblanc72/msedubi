@@ -4,11 +4,12 @@
 # Test code
 # library(RODBC)
 # channel <- odbcDriverConnect(dbConnection)
-# InputDataSet <- sqlQuery(channel, 'SELECT TOP 1000 [StudentID],[TermID],[SubjectID],[CatalogID],[ClassID],[SectionID],[EnrollDate],[Age],[Class],[CreditHours],[Gender],[MidTermGrade],[Subject],[Term] FROM MLInput.DropClass');
+# InputDataSet <- sqlQuery(channel, 'SELECT TOP 1000 [StudentID],[TermID],[SubjectID],[CatalogID],[ClassID],[SectionID],[EnrollDate],[Dropped],[Age],[Class],[CreditHours],[Gender],[MidTermGrade] FROM MLInput.DropClass');
 # odbcClose(channel)
 
 studentDropClassModel <- unserialize(rx_model);
-studentDropClassPredict <- rxPredict(studentDropClassModel, rx_data[8:15], predVarNames = "Score", type = "response", writeModelVars = TRUE);
+rx_data$Score <- rxPredict(studentDropClassModel, rx_data[9:13]);
+rx_data$DropoutFlag <- as.numeric(rx_data$Score > 0.5)
 
-OutputDataSet <- cbind(rx_data[1:7], studentDropClassPredict$Dropped, studentDropClassPredict$Score)
-colnames(OutputDataSet) <- c("StudentID","TermID","SubjectID","CatalogID","ClassID","SectionID","EnrollDate","DropoutFlag","Score")
+OutputDataSet <- cbind(rx_data[1:7], rx_data$DropoutFlag, rx_data$Score)
+colnames(OutputDataSet) <- c("StudentID", "TermID", "SubjectID", "CatalogID", "ClassID", "SectionID", "EnrollDate", "DropoutFlag", "Score")
